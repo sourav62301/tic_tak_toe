@@ -1,9 +1,15 @@
 import React from 'react';
 
-const Square = ({ value, onClick }) => {
+const Square = ({ value, onClick, isWinningSquare }) => {
   // console.log('Square Re-render');
   return (
-    <button type="button" className="square" onClick={onClick}>
+    <button
+      type="button"
+      onClick={onClick}
+      className={`square ${isWinningSquare ? 'winning' : ''} ${
+        value === 'X' ? 'text-green' : 'text-orange'
+      }`}
+    >
       {value}
     </button>
   );
